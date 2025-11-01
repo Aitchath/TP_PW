@@ -1,0 +1,265 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP4</title>
+</head>
+<body>
+     -->
+   
+    <script>
+
+        // Exercice 1 - Affichage en javascript
+        document.write("<h1> Exercice 1 - Affichage en javascript </h1>");
+
+        document.write("La première ligne de texte pour le tp <br>");
+
+        document.write("<p>La deuxième ligne de texte pour le tp</p> "); 
+
+        document.write("<b>La troisième ligne de texte pour le tp </b> </br>");
+
+        document.write(`
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td> première case </td>
+                        <td> deuxième case </td>
+                        <td> troisième case </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td> et voici </td>
+                        <td> une seconde </td>
+                        <td> ligne </td>
+                    </tr>
+                </tbody>
+            </table>
+        `)
+
+        document.write("Mon texte en gras".bold())
+
+        // Exercice 2 - Utilisation de variables
+        document.write("<h1> Exercice 2 - Utilisation de variables </h1>");
+
+        var value = 2;
+        var chaine = "Je suis une chaîne de caractères";
+        var neutre = "Je contient una valeur numérique 2";
+
+        document.write(value + "<br> </br>");
+
+        document.write(chaine  + "<br> </br>");
+
+        document.write(neutre  + "<br> </br>")
+
+        document.write(`
+            
+            <table border = '1'>
+                <thead>
+                    <th> Entier </th>
+                    <th> Chaîne </th>
+                    <th> Entier et chaîne </th>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td> ${value} </td>
+                        <td> ${chaine} </td>
+                        <td> ${neutre} </td>
+                    </tr>
+                </tbody>
+            </table>
+        `)
+
+        // Exercice 3 - Les fonctions
+        document.write("<h1> Exercice 3 - Les fonctions </h1>");
+
+            function affichage(chaine) {
+                return chaine;
+            }
+
+            document.write(affichage("Je suis une chaîne de caractères" + "<br> </br>"));
+
+            function tableaux(valeur1, valeur2, valeur3, valeur4) {
+                document.write(`
+                    <table border = '1'>
+                       <tr>
+                            <td> ${valeur1} </td>
+                            <td> ${valeur2} </td>
+                        </tr>
+
+                        <tr>
+                                <td> ${valeur3} </td>
+                                <td> ${valeur4} </td>
+                            </tr>
+                    </table>
+                `)
+            }
+
+            tableaux("variable 1", "variable 2", "variable 3", "variable 4");
+       
+
+            // Exercice 4 - Utilisation de la boite alerte
+            document.write("<h1> Exercice 4 - Utilisation de la boite alerte </h1>");
+             
+            function alertBox() {
+                alert("Bienvenue sur la page");
+            }
+            document.write("<button onClick=alertBox()> Voir info </button> </br> </br>");
+            
+            document.write("<a href='#' onmouseOver=alertBox() > Le lien du site </a> </br> </br>");
+            document.write("<img src='public/Ship.svg' onmouseOver=alertBox() /> </br> </br>");
+
+
+            var valeur = "Voici le contenue du paramètre importante!";
+            function alertInfo(param) {
+                alert(param);
+            }
+
+
+             // Exercice 5 - Structures du langage
+            document.write("<h1> Exercice 5 - Utilisation de la boite alerte </h1>");
+            document.write("<h3> Structure conditionnelle if </h3>");
+
+            function testIf() {
+                var a = 15;
+                if(a < 10) {
+                    document.write("La valeur de la variable est inférieur à 10 !!!" + "<br> </br>");
+                } else {
+                    document.write("La valeur de la variable a est supérieur à 10 !!!" + "<br> </br>");
+                }
+            }
+            
+            testIf();
+
+            document.write("<h3> Structure conditionnelle for </h3>");
+            function testFor() {
+               for(var i = 0; i <= 10; i++){
+                    document.write(i + "<br>");
+               }
+            }
+
+            testFor();
+
+            function tableau() {
+                
+                var tab = new Array(10);
+
+                for (var i = 0; i < 10; i++) {
+                    tab[i] = new Array(10);
+                    for(var j = 0; j < 10; j++){
+                        tab[i][j] = `[${i}][${j}]`
+                        document.write("La valeur de la case de ligne " + i + " et de colonne " + j + " est : " + tab[i][j] + "<br>");
+                    }
+                }
+            }
+
+            tableau();
+
+        // Exercice 6 - Formulaire
+
+       document.write("<h1> Exercice 6 - Formulaire </h1>");
+
+        document.write("<h3> Une copie dans le même formulaire </h3>");
+        function copie() {
+           var firstname = document.getElementById("firstname");
+           var lastname = document.getElementById("lastname");
+
+           lastname.value = firstname.value;
+        }
+
+        document.write(`
+            <form> 
+                <div> 
+                    <label for='firstname'> Nom </label>
+                    <input id='firstname' name='firstname' type='text' value='TP_JS Miage' />
+                </div> </br>
+
+                 <div> 
+                    <label for='lastname'> Prénom </label>
+                    <input name='lastname'id='lastname' value='' type='text' />
+                </div> </br>
+
+                <select id='pays' onChange=afficherCapital()> 
+                    <option> Sélectionnez un pays </option>
+                    <option value='Cotonou'> Benin </option>
+                    <option value='Paris'> France </option>
+                    <option value='Yaoundé'> Cameroun </option>
+                    <option value='Abidjan'> Côte d'ivoire </option>
+                </select>
+            </form>
+
+            <p id="resultat"></p> 
+        `)
+
+        copie();
+
+        
+        function afficherCapital() {
+            var select = document.getElementById('pays');
+            var pays = select.options[select.selectedIndex].text;
+            var capitale = select.value;
+            var article = '';
+
+            if (pays === 'Benin' || pays === 'Cameroun') {
+                article = 'du';
+            } else {
+                article = 'de la';
+            }
+            
+            document.getElementById('resultat').innerText =
+            'La capitale ' + article + ' ' + pays + ' est : ' + capitale + '.';
+        }
+        
+        document.write("<h3> Copie vers un autre formulaire </h3>");
+
+        document.write(`
+            <form> 
+                <div> 
+                    <label for='form1'> Formumlaire1 </label>
+                    <input id='form1' name='form1' type='text' value='Contenu du formulaire 1' />
+                </div> </br>
+            </form>
+        `)
+
+        document.write(`
+            <form> 
+                <div> 
+                    <label for='form2'> Formumlaire2 </label>
+                    <input id='form2' name='form2' type='text' />
+                </div> </br>
+            </form>
+        `)
+
+        function copieForm() {
+           var form1 = document.getElementById("form1");
+           var form2 = document.getElementById("form2");
+
+           form2.value = form1.value;
+        }
+
+        copieForm();
+
+        // Exercice 7 - Les fenêtres
+
+        var link = window.location.href; 
+
+        function fermerFenetre() {
+            window.close(); 
+        }
+
+        document.write(`
+            <a href="#" onmouseOver=fermerFenetre()>
+                ${link}
+            </a>
+        `);
+
+
+
+
+    </script>
+    
+<!-- </body>
+</html> -->

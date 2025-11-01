@@ -1,0 +1,182 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .icon-container svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #718096;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .item-info {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .item-info strong {
+            display: block;
+            color: #2d3748;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .item-name {
+            color: #4a5568;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+         .btn {
+            flex: 1;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-cancel {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-cancel:hover {
+            background: #cbd5e0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-delete {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: linear-gradient(135deg, #ee5a6f, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(238, 90, 111, 0.4);
+        }
+
+        .btn-delete:active, .btn-cancel:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
